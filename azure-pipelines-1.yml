@@ -168,8 +168,8 @@ stages:
   displayName: Create & Deploy to Dev
   dependsOn: Build_Stage
   variables:
-    azureSubscription: 'WebAppWithDatabaseDemo_spn' # couldn't be referenced
-    ResourceGroupName: '$(Prefix)-$(Release.EnvironmentName)-$(UniqueId)-RG'
+    azureSubscription: '73d419e9-f113-4c97-b0be-9c96ca7beb62' # couldn't be referenced
+    ResourceGroupName: 'webappDBDemo-RG'
     Database.Admin: 'houssem'
     Database.Password: '@Aa123456' # to be secured in Key Vault
     Database.Name: 'EmployeesDB'
