@@ -174,7 +174,7 @@ stages:
       displayName: Validate ARM templates
       enabled: ${{ parameters.runCompletePipeline }}
       inputs:
-        azureSubscription: 'Free Trial (73d419e9-f113-4c97-b0be-9c96ca7beb62)'
+        azureSubscription: 'Azure subscription 1 (73d419e9-f113-4c97-b0be-9c96ca7beb62)'
         action: 'Create Or Update Resource Group'
         resourceGroupName: '$(ResourceGroupName)'
         location: 'West Europe'
