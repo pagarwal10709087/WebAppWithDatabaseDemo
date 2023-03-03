@@ -151,7 +151,7 @@ stages:
     WebAppName: '$(Prefix)-$(Release.EnvironmentName)-$(UniqueId)'
     WebAppNameUrl: 'https://$(WebAppName).azurewebsites.net/'
     SqlServerName: '$(Prefix)-sql-$(Release.EnvironmentName)-$(UniqueId)'
-    Prefix: 'tunis'
+    Prefix: 'Pooja'
     Release.EnvironmentName: 'dev'
     UniqueId: '1280' #'$(Build.BuildId)'
     hostingPlanName: '$(Prefix)-service-plan'
