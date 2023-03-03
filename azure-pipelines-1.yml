@@ -272,37 +272,7 @@ stages:
         DeploymentAction: 'Publish'
         DacpacFile: '$(System.DefaultWorkingDirectory)/dacpac/WebApp.Database.dacpac'
         IpDetectionMethod: 'AutoDetect'
-# new JOB: Selenium
-  - job: Test_DEV
-    displayName: Run Selenium tests in DEV
-    dependsOn: Deploy_DEV
-    pool:
-      vmImage: 'windows-2019'
-    steps:
-
-    - checkout: none
-    - task: DownloadBuildArtifacts@0    
-      displayName: Download Selenium Tests
-      inputs:
-        buildType: 'current'
-        downloadType: 'single'
-        artifactName: 'ui-tests'
-        itemPattern: ''
-        downloadPath: '$(System.DefaultWorkingDirectory)'
-
-    - task: VSTest@2
-      displayName: Run Selenium UI Tests
-      inputs:
-        testSelector: 'testAssemblies'
-        searchFolder: '$(System.DefaultWorkingDirectory)/ui-tests'
-        runSettingsFile: '$(System.DefaultWorkingDirectory)/ui-tests/.runsettings'
-        overrideTestrunParameters: '-webAppUrl $(WebAppNameUrl)'
-        testAssemblyVer2: |
-          **\*Test*.dll 
-          !**\*TestAdapter.dll 
-          !**\obj\**
-        runInParallel: false
-        codeCoverageEnabled: true
+# 
 
 
 - stage: Test_Stage
